@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>E-BUS</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" th:href="@{/}">E-BUS</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Anasayfa</a></li>
+        <li><a href="#">Biletler</a></li>
+        <li><a href="#">İletişim</a></li>
+      
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="glyphicon glyphicon-log-in"></span></a>
+        
+          <div class="dropdown-menu">
+            <form id="formLogin" th:action="@{/login}" method="post" class="form container-fluid">
+				 
+              <div class="form-group">
+                <label for="username">e-mail :</label>
+                <input type="text" class="form-control" id ="username" name = "username">
+              </div>
+              <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" class="form-control " id="password" name="password">
+              </div>
+              <button type="submit"  name="login-submit" id="login-submit" class="btn btn-block">Giriş yap</button>
+            </form>
+            <div class="container-fluid">
+              <br>
+              <a href="/" th:href="@{/registration}">Register here</a>
+            </div> 	
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <a "btn btn-warning" th:if="${param.error}">Geçersiz Kullanıcı adı veya şifre </a>
+<div class="container">
+
+  <h3></h3>
+ <div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Seferler</a></li>
+    <li><a href="#tab2" data-toggle="tab">Açık biletler</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <table class="table table-hover">
+  <tr class="success">
+    <td>1</td>
+    <td>TB - Monthly</td>
+    <td>01/04/2012</td>
+    <td>Approved</td>
+  </tr>
+   <tr class="success">
+    <td>1</td>
+    <td>TB - Monthly</td>
+    <td>01/04/2012</td>
+    <td>Approved</td>
+  </tr>
+   <tr class="success">
+    <td>1</td>
+    <td>TB - Monthly</td>
+    <td>01/04/2012</td>
+    <td>Approved</td>
+  </tr>
+</table>
+    </div>
+    <div class="tab-pane" id="tab2">
+            <table class="table table-hover">
+  <tr class="warning">
+    <td>1</td>
+    <td>TB - Monthly</td>
+    <td>01/04/2012</td>
+    <td>Approved</td>
+  </tr>
+   <tr class="danger">
+    <td>1</td>
+    <td>TB - Monthly</td>
+    <td>01/04/2012</td>
+    <td>Approved</td>
+  </tr>
+   <tr class="success">
+    <td>1</td>
+    <td>TB - Monthly</td>
+    <td>01/04/2012</td>
+    <td>Approved</td>
+  </tr>
+</table>
+    </div>
+  </div>
+</div>
+	
+</body>
+</html>
